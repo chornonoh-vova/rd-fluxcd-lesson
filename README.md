@@ -25,3 +25,8 @@ dragonfly operator.
 ## Stage 4
 
 Created the `overlays/production/`.
+
+## Stage 5
+
+Connected flux manifests to connect development and production overlays and
+dragonfly operator.
