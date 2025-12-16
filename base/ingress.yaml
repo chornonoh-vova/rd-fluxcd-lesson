@@ -1,9 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ingress
+  name: course-app-ingress
 spec:
-  ingressClassName: traefik
   tls:
     - hosts:
         - course-app.local
@@ -16,6 +15,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: course-app
+                name: course-app-svc
                 port:
-                  number: 80
+                  number: 8080

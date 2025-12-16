@@ -2,14 +2,5 @@ apiVersion: dragonflydb.io/v1alpha1
 kind: Dragonfly
 metadata:
   name: dragonfly
-  namespace: dragonfly-operator
 spec:
   replicas: 2
-  image: docker.dragonflydb.io/dragonflydb/dragonfly:latest
-  resources:
-    requests:
-      cpu: 500m
-      memory: 500Mi
-    limits:
-      cpu: 750m
-      memory: 768Mi

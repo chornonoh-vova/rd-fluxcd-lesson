@@ -1,11 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: course-app
+  name: course-app-svc
 spec:
-  type: ClusterIP
   selector:
     app: course-app
+  type: ClusterIP
   ports:
-    - port: 8080
+    - name: course-app
+      port: 8080
       targetPort: 8080

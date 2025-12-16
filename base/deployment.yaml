@@ -1,10 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: course-app
-  namespace: lesson-12
+  name: course-app-deployment
 spec:
+  selector:
+    matchLabels:
+      app: course-app
   template:
+    metadata:
+      labels:
+        app: course-app
     spec:
       containers:
         - name: course-app
@@ -14,7 +19,7 @@ spec:
               name: application
           envFrom:
             - configMapRef:
-                name: course-app-config-map
+                name: course-app-config
           readinessProbe:
             httpGet:
               path: /readyz

@@ -4,13 +4,10 @@ metadata:
   name: course-app-development
   namespace: flux-system
 spec:
-  interval: 5m
-  targetNamespace: development
+  interval: 1m0s
+  path: ./overlays/development
+  prune: true
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: "./overlays/development"
-  prune: true
-  timeout: 1m
-  dependsOn:
-    - name: dragonfly-operator
+  targetNamespace: development
