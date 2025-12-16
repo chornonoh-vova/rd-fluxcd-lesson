@@ -22,3 +22,6 @@ Created the `overlays/development/` for the development.
 Additionally, created the `infrastructure/controllers/dragonfly/` to install the
 dragonfly operator.
 
+## Stage 4
+
+Created the `overlays/production/`.

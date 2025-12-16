@@ -15,13 +15,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: course-app-config-map
-          resources:
-            requests:
-              memory: "100Mi"
-              cpu: "125m"
-            limits:
-              memory: "200Mi"
-              cpu: "250m"
           readinessProbe:
             httpGet:
               path: /readyz

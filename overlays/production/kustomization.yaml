@@ -1,0 +1,25 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: production
+
+resources:
+  - ../../base
+  - hpa.yaml
+  - dragonfly.yaml
+
+patches:
+  - path: deployment.yaml
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: course-app
+      spec:
+        replicas: 3
+
+configMapGenerator:
+  - name: course-app-config-map
+    literals:
+      - APP_STORE=redis
+      - APP_REDIS_URL=redis://dragonfly.production:6379/0
+      - APP_MESSAGE=Hello World
