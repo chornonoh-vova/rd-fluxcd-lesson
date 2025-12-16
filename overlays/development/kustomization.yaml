@@ -7,9 +7,6 @@ resources:
   - dragonfly.yaml
 patches:
   - target:
-      kind: Deployment
-      name: course-app-deployment
-  - target:
       kind: Ingress
       name: course-app-ingress
     patch: |-
