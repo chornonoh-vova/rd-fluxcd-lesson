@@ -10,3 +10,15 @@ GITHUB_TOKEN=$(gh auth token) flux bootstrap github
     --path=./clusters/my-cluster
     --personal
 ```
+
+## Stage 2
+
+Created the `base/` for the application manifests.
+
+## Stage 3
+
+Created the `overlays/development/` for the development.
+
+Additionally, created the `infrastructure/controllers/dragonfly/` to install the
+dragonfly operator.
+
